@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll(".portfolio-section");
     const navLinks = document.querySelectorAll(".nav-link");
 
+
+    /* SECTION NAVIGATION */
+
     window.showSection = function (sectionId) {
 
         sections.forEach(function (section) {
@@ -16,11 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         navLinks.forEach(function (link) {
+
             link.classList.remove("active");
 
             if (link.getAttribute("href") === "#" + sectionId) {
                 link.classList.add("active");
             }
+
         });
 
         window.scrollTo({
@@ -31,42 +36,64 @@ document.addEventListener("DOMContentLoaded", function () {
         const navbar = document.getElementById("navbarNav");
 
         if (navbar.classList.contains("show")) {
-            const collapseButton = document.querySelector(".navbar-toggler");
+
+            const collapseButton =
+                document.querySelector(".navbar-toggler");
 
             if (collapseButton) {
                 collapseButton.click();
             }
+
         }
+
     };
 
 
     /* PROJECT FILTER */
 
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const projectItems = document.querySelectorAll(".project-item");
+    const filterButtons =
+        document.querySelectorAll(".filter-btn");
+
+    const projectItems =
+        document.querySelectorAll(".project-item");
+
 
     filterButtons.forEach(function (button) {
 
         button.addEventListener("click", function () {
 
-            const filter = button.getAttribute("data-filter");
+            const filter =
+                button.getAttribute("data-filter");
+
 
             filterButtons.forEach(function (btn) {
+
                 btn.classList.remove("btn-primary");
+
                 btn.classList.add("btn-outline-primary");
+
             });
 
+
             button.classList.remove("btn-outline-primary");
+
             button.classList.add("btn-primary");
+
 
             projectItems.forEach(function (project) {
 
-                const category = project.getAttribute("data-category");
+                const category =
+                    project.getAttribute("data-category");
+
 
                 if (filter === "all" || category === filter) {
+
                     project.style.display = "";
+
                 } else {
+
                     project.style.display = "none";
+
                 }
 
             });
@@ -78,7 +105,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* CONTACT FORM VALIDATION */
 
-    const contactForm = document.getElementById("contactForm");
+    const contactForm =
+        document.getElementById("contactForm");
+
 
     if (contactForm) {
 
@@ -86,39 +115,81 @@ document.addEventListener("DOMContentLoaded", function () {
 
             event.preventDefault();
 
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
 
-            const nameError = document.getElementById("nameError");
-            const emailError = document.getElementById("emailError");
-            const messageError = document.getElementById("messageError");
-            const formSuccess = document.getElementById("formSuccess");
+            const name =
+                document.getElementById("name").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const message =
+                document.getElementById("message").value.trim();
+
+
+            const nameError =
+                document.getElementById("nameError");
+
+            const emailError =
+                document.getElementById("emailError");
+
+            const messageError =
+                document.getElementById("messageError");
+
+            const formSuccess =
+                document.getElementById("formSuccess");
+
 
             nameError.textContent = "";
+
             emailError.textContent = "";
+
             messageError.textContent = "";
+
             formSuccess.textContent = "";
+
 
             let isValid = true;
 
+
             if (name === "") {
-                nameError.textContent = "Please enter your name.";
+
+                nameError.textContent =
+                    "Please enter your name.";
+
                 isValid = false;
+
             }
+
 
             if (email === "") {
-                emailError.textContent = "Please enter your email.";
+
+                emailError.textContent =
+                    "Please enter your email.";
+
                 isValid = false;
-            } else if (!email.includes("@") || !email.includes(".")) {
-                emailError.textContent = "Please enter a valid email address.";
+
+            } else if (
+                !email.includes("@") ||
+                !email.includes(".")
+            ) {
+
+                emailError.textContent =
+                    "Please enter a valid email address.";
+
                 isValid = false;
+
             }
 
+
             if (message === "") {
-                messageError.textContent = "Please enter your message.";
+
+                messageError.textContent =
+                    "Please enter your message.";
+
                 isValid = false;
+
             }
+
 
             if (isValid) {
 
@@ -126,6 +197,39 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Thank you! Your message has been submitted successfully.";
 
                 contactForm.reset();
+
+            }
+
+        });
+
+    }
+
+
+    /* LIGHT / DARK MODE */
+
+    const themeToggle =
+        document.getElementById("themeToggle");
+
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener("click", function () {
+
+            document.body.classList.toggle("dark-mode");
+
+
+            if (
+                document.body.classList.contains("dark-mode")
+            ) {
+
+                themeToggle.textContent =
+                    "☀️ Light Mode";
+
+            } else {
+
+                themeToggle.textContent =
+                    "🌙 Dark Mode";
+
             }
 
         });
