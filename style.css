@@ -13,12 +13,12 @@ body {
     background: #fff8fc;
     color: #333;
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-/* NAVBAR */
 
 .navbar {
     padding: 15px 0;
+    transition: background-color 0.3s ease;
 }
 
 .navbar-brand {
@@ -39,8 +39,9 @@ body {
     color: #c21875 !important;
 }
 
-
-/* SECTION CONTROL */
+.theme-btn {
+    white-space: nowrap;
+}
 
 .portfolio-section {
     display: none;
@@ -51,14 +52,17 @@ body {
     display: block;
 }
 
-
-/* HOME */
-
 .hero-section {
     min-height: calc(100vh - 75px);
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #fff8fc 0%, #fde7f3 50%, #f9d7e9 100%);
+    background: linear-gradient(
+        135deg,
+        #fff8fc 0%,
+        #fde7f3 50%,
+        #f9d7e9 100%
+    );
+    transition: background 0.3s ease;
 }
 
 .hero-small {
@@ -118,9 +122,6 @@ body {
     box-shadow: 0 15px 40px rgba(194, 24, 117, 0.25);
 }
 
-
-/* COMMON PAGE */
-
 .page-section {
     padding: 80px 15px;
 }
@@ -139,9 +140,6 @@ body {
     color: #777;
     font-size: 1.05rem;
 }
-
-
-/* ABOUT */
 
 .about-image {
     width: 280px;
@@ -167,9 +165,6 @@ body {
     color: #555;
 }
 
-
-/* EDUCATION */
-
 .education-table {
     background: white;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
@@ -185,9 +180,6 @@ body {
     padding: 18px;
     vertical-align: middle;
 }
-
-
-/* SKILLS */
 
 .skill-card {
     height: 100%;
@@ -217,9 +209,6 @@ body {
 .skill-card li {
     margin-bottom: 8px;
 }
-
-
-/* PROJECTS */
 
 .project-filters {
     margin-bottom: 25px;
@@ -253,9 +242,6 @@ body {
     color: #666;
 }
 
-
-/* INTERNSHIP */
-
 .internship-card {
     background: white;
     padding: 35px;
@@ -282,9 +268,6 @@ body {
     margin-bottom: 8px;
 }
 
-
-/* ACHIEVEMENTS */
-
 .achievement-card {
     height: 100%;
     background: white;
@@ -303,9 +286,6 @@ body {
     font-size: 1.3rem;
     margin-bottom: 15px;
 }
-
-
-/* CONTACT */
 
 .contact-card {
     background: white;
@@ -346,9 +326,6 @@ body {
     margin-top: 15px;
 }
 
-
-/* FOOTER */
-
 footer {
     background: #c21875;
     color: white;
@@ -361,7 +338,153 @@ footer p {
 }
 
 
-/* MOBILE */
+/* DARK MODE */
+
+body.dark-mode {
+    background: #181818;
+    color: #eeeeee;
+}
+
+body.dark-mode .navbar {
+    background: #222222 !important;
+}
+
+body.dark-mode .navbar-brand {
+    color: #ff6fb5 !important;
+}
+
+body.dark-mode .navbar-toggler {
+    border-color: #777;
+}
+
+body.dark-mode .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+body.dark-mode .nav-link {
+    color: #eeeeee !important;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+    color: #ff6fb5 !important;
+}
+
+body.dark-mode .hero-section {
+    background: linear-gradient(
+        135deg,
+        #181818 0%,
+        #30202a 50%,
+        #3a2231 100%
+    );
+}
+
+body.dark-mode .hero-small,
+body.dark-mode .hero-section h1 {
+    color: #ff6fb5;
+}
+
+body.dark-mode .hero-section h2 {
+    color: #dddddd;
+}
+
+body.dark-mode .hero-description {
+    color: #cccccc;
+}
+
+body.dark-mode .page-section {
+    background: #181818;
+}
+
+body.dark-mode .section-heading h1 {
+    color: #ff6fb5;
+}
+
+body.dark-mode .section-heading p {
+    color: #cccccc;
+}
+
+body.dark-mode .about-card,
+body.dark-mode .skill-card,
+body.dark-mode .project-card,
+body.dark-mode .internship-card,
+body.dark-mode .achievement-card,
+body.dark-mode .contact-card,
+body.dark-mode .education-table {
+    background: #292929;
+    color: #eeeeee;
+}
+
+body.dark-mode .about-card p,
+body.dark-mode .project-card p,
+body.dark-mode .skill-card li,
+body.dark-mode .internship-card li {
+    color: #dddddd;
+}
+
+body.dark-mode .about-card h2,
+body.dark-mode .skill-card h2,
+body.dark-mode .project-card h2,
+body.dark-mode .internship-card h2,
+body.dark-mode .internship-card h4,
+body.dark-mode .achievement-card h2 {
+    color: #ff6fb5;
+}
+
+body.dark-mode .internship-card h3 {
+    color: #dddddd;
+}
+
+body.dark-mode .education-table {
+    color: #eeeeee;
+}
+
+body.dark-mode .education-table td {
+    background: #292929;
+    color: #eeeeee;
+    border-color: #444444;
+}
+
+body.dark-mode .education-table thead {
+    background: #c21875;
+    color: white;
+}
+
+body.dark-mode .form-label {
+    color: #eeeeee;
+}
+
+body.dark-mode .form-control {
+    background: #333333;
+    color: white;
+    border-color: #555555;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #bbbbbb;
+}
+
+body.dark-mode .form-control:focus {
+    border-color: #ff6fb5;
+    box-shadow: 0 0 0 0.2rem rgba(255, 111, 181, 0.15);
+}
+
+body.dark-mode .theme-btn {
+    color: #ff6fb5;
+    border-color: #ff6fb5;
+}
+
+body.dark-mode .theme-btn:hover {
+    background-color: #ff6fb5;
+    color: #222222;
+}
+
+body.dark-mode footer {
+    background: #111111;
+}
+
+
+/* RESPONSIVE DESIGN */
 
 @media (max-width: 768px) {
 
@@ -403,5 +526,9 @@ footer p {
     .nav-link {
         margin-left: 0;
         padding: 8px 0;
+    }
+
+    .theme-btn {
+        margin-bottom: 10px;
     }
 }
