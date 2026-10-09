@@ -52,3 +52,4 @@ Stanley College of Engineering and Technology for Women, Hyderabad
 **G. Rishitha Goud**
 
 GitHub: https://github.com/GRishitha293
+live: https://grishitha293.github.io/personal-portfolio/
